@@ -54,7 +54,7 @@ final class S3Driver: NetworkDriver {
             throw Error.pathMissingForwardSlash
         }
         
-        try s3.upload(bytes: bytes, path: path, access: .publicRead)
+        try s3.upload(bytes: bytes, path: path, access: .publicRead, mimeType: entity.mime)
         
         return path
     }
